@@ -1,0 +1,15 @@
+{
+  "name": "chai-backend",
+  "version": "1.0.0",
+  "description": "learning backend",
+  "license": "ISC",
+  "author": "Saad Akhtar",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
