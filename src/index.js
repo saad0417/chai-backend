@@ -1,5 +1,5 @@
 // require('dotenv').config({path: "./env"})
-
+// dotenv loads variables from .env file into process.env.
 import connectDB from "./db/index.js";
 import dotenv from 'dotenv'
 
