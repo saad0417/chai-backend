@@ -1,3 +1,4 @@
+// Error is the built-in class in Node.js that provides a standard way to create and handle errors.
 class ApiError extends Error
 {
     constructor(

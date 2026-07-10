@@ -11,7 +11,7 @@ connectDB()
 .then(() => {
     // app.on and more here checks if express app is running or not, if not then it will throw an error.
     app.on("error", (error) => {
-            console.log("ERRR", error);
+            console.log("ERRR:", error);
             throw error;
         })
 
