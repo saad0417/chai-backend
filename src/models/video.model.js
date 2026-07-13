@@ -1,0 +1,49 @@
+import mongoose, {Schema} from "mongoose";
+// if we have imported Schema here then we don't need to write mongoose.Schema 
+import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
+
+const videoSchema = new Schema(
+    {
+        videoFile: {
+            type: String,  // Cloudinary URL
+            required: [true, "Video file is required"]
+        },
+        thumbnail: {
+            type: String,  // Cloudinary URL
+            required: [true, "Thumbnail is required"]
+        },
+        thumbnail: {
+            type: String,
+            required: true
+        },
+        owner: {
+            type: Schema.Types.ObjectId,
+            ref: "User"
+        },
+        title: {
+            type: String,
+            required: true
+        },
+        description: {
+            type: String,
+            required: true
+        },
+        duration: {
+            type: Number,
+            required: true
+        },
+        views: {
+            type: Number,
+            default: 0
+        },
+        isPublished: {
+            type: Boolean,
+            required: true
+        }
+
+    },{timestamps: true}
+)
+
+videoSchema.plugin(mongooseAggregatePaginate)
+
+export const Video = mongoose.model("Video", videoSchema)
