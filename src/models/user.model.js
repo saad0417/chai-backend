@@ -1,5 +1,5 @@
-import mongoose, {Schema} from 'mongoose'
 // if we have imported Schema here then we don't need to write mongoose.Schema 
+import mongoose, {Schema} from 'mongoose'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
@@ -52,7 +52,7 @@ userSchema.pre("save", async function(next) {
     if(!this.isModified("password")) return next()
     
     this.password = await bcrypt.hash(this.password, 10) // here 10 means rounds
-    next()
+    next() // here next means we are done with our work and now we can save the content in the database or passes the control to the next middleware function.
 })
 
 userSchema.methods.isPasswordCorrect = async function(password) {

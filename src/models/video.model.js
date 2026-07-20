@@ -12,10 +12,6 @@ const videoSchema = new Schema(
             type: String,  // Cloudinary URL
             required: [true, "Thumbnail is required"]
         },
-        thumbnail: {
-            type: String,
-            required: true
-        },
         owner: {
             type: Schema.Types.ObjectId,
             ref: "User"
