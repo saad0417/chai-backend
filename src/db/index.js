@@ -7,7 +7,7 @@ const connectDB = async () => {
         const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URI}/${DB_Name}`);
 
         // This gives us the host id of the connected database, which is useful for debugging and logging purposes.
-        console.log(`\n MongoDB Connected !! DB Host: ${connectionInstance.connection.host}`);
+        console.log(`\nMongoDB Connected !! DB Host: ${connectionInstance.connection.host}`);
         
     } 
     catch (error) 
